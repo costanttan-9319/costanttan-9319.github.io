@@ -86,7 +86,7 @@ body {
     transition: var(--transition);
     z-index: 100;
     font-family: 'Raleway', sans-serif;
-    
+
 }
 
 
@@ -109,8 +109,7 @@ body {
 
 /* Dropdown items hover to blue */
 .dropdown-content a:hover {
-    background-color: #1c2a38;
-    color: var(--primary-blue);
+    background-color: #2f3031;
 }
 
 /* --- 4. Hero Section --- */
