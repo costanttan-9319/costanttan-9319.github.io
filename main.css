@@ -3,8 +3,8 @@
 
 /* --- 1. Global Reset & Variables --- */
 :root {
-    --bg-color: #1c2937;
-    --card-bg: #24394e;
+    --bg-color: #203145;
+    --card-bg: #16212c;
     --text-white: #ffffff;
     --primary-blue: #00aaff;
     --secondary-blue: #0077cc;
@@ -74,7 +74,7 @@ body {
     position: absolute;
     top: 100%; 
     left: 0;
-    background-color: rgba(11, 17, 24, 0.7);
+    background-color: var(--card-bg);
     min-width: 180px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
     border-radius: 4px;
@@ -82,12 +82,6 @@ body {
     transition: var(--transition);
     z-index: 100;
     font-family: 'Raleway', sans-serif;
-    /* 2. The Blur (Makes it look like frosted glass) */
-    backdrop-filter: blur(12px); 
-    -webkit-backdrop-filter: blur(12px); /* Safari/Chrome engine support */
-    
-    /* 3. Suble border to make the edges crisp */
-    border: 1px solid rgba(60, 53, 53, 0.1);
 }
 
 /* Show dropdown on hover */
@@ -119,7 +113,6 @@ body {
     justify-content: space-between;
     padding: 160px 10% 100px;
     min-height: 90vh;
-    gap: 40px;
 }
 
 .hero img {
@@ -131,20 +124,17 @@ body {
 }
 
 .hero-content {
-    flex: 1;
     max-width: 600px;
 }
 
 h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    line-height: 1.2;
 }
 
 .highlight {
     color: var(--primary-blue);
     border-bottom: 2px solid var(--primary-blue);
-    white-space: nowrap;
 }
 
 .role {
@@ -210,7 +200,7 @@ h1 {
 }
 
 .profile-img {
-    width: 580px;
+    width: 480px;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.6);
