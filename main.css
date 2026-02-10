@@ -254,3 +254,69 @@ footer p {
     font-size: 14px;
     color: #88929b;
 }
+
+/*======BELOW IS FOR RESUME PAGE========*/
+
+/*For the H1 and the paragraph below, part 1*/
+.resume-wrapper {
+    padding: 120px 20px 60px; /* Space for fixed nav + breathing room */
+    max-width: 1100px;
+    margin: 0 auto;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.resume-header-content {
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 60px;
+}
+
+.resume-header-content h1 {
+    font-size: 100px;
+    font-weight: 50;
+    margin-bottom: 10px;
+    color: #fff;
+    text-transform: none; /* Keeps it as "Resume" instead of "RESUME" */
+}
+
+.resume-header-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 850px; /* Prevents text from stretching too wide */
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8); /* Slightly softer white for the intro */
+}
+
+/*==For the row below, part 2==*/
+/* --- Resume Grid Layout --- */
+.resume-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
+    gap: 60px; /* Space between the two columns */
+    margin-top: 40px;
+}
+
+/* --- Section Titles --- */
+.column-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    padding-bottom: 15px; 
+    margin-bottom: 30px;
+} /* <--- MAKE SURE THIS BRACKET IS HERE */
+
+/* This draws the actual blue line */
+.column-title::after {
+    content: "";            
+    position: absolute;     
+    left: 0;                
+    bottom: 0;              
+    width: 50px;            
+    height: 3px;            
+    background: #0563af;    
+}
+
+
