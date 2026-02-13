@@ -264,68 +264,117 @@ footer p {
     color: #88929b;
 }
 
-/*======BELOW IS FOR RESUME PAGE========*/
-
-/*For the H1 and the paragraph below, part 1*/
-.resume-wrapper {
-    padding: 120px 20px 60px; /* Space for fixed nav + breathing room */
+/* =====Here onwards belongs to reumse 2===== */
+/* --- 9. Resume 2 Container Layout --- */
+.resume-container {
+    display: flex;
     max-width: 1100px;
-    margin: 0 auto;
-    color: #fff;
-    font-family: 'Raleway', sans-serif;
+    margin: 120px auto 50px auto; /* 120px top margin to sit below your fixed navbar */
+    background-color: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 80vh;
 }
 
-.resume-header-content {
+/* --- 10. Sidebar (Left Column) --- */
+.sidebar {
+    flex: 0 0 350px; /* Takes up about 1/3 of the space */
+    background-color: #212832; /* Matches the muted purple/blue from your screenshot */
+    color: white;
+    padding: 40px 30px;
+}
+
+.profile-section {
     text-align: center;
-    padding-top: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
-.resume-header-content h1 {
-    font-size: 100px;
-    font-weight: 50;
-    margin-bottom: 10px;
-    color: #fff;
-    text-transform: none; /* Keeps it as "Resume" instead of "RESUME" */
+.profile-section h1 {
+    font-size: 1.5rem;
+    white-space: normal; /* Allows name to wrap if long */
+    margin-bottom: 15px;
 }
 
-.resume-header-content p {
-    font-size: 16px;
-    line-height: 1.6;
-    max-width: 850px; /* Prevents text from stretching too wide */
-    margin: 0 auto;
-    color: rgba(255, 255, 255, 0.8); /* Slightly softer white for the intro */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes it a circle like the screenshot */
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 0 auto 15px;
 }
 
-/*==For the row below, part 2==*/
-/* --- Resume Grid Layout --- */
-.resume-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Creates two equal columns */
-    gap: 60px; /* Space between the two columns */
-    margin-top: 40px;
-}
-
-/* --- Section Titles --- */
-.column-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #fff;
-    position: relative;
-    padding-bottom: 15px; 
+.info-block p {
     margin-bottom: 30px;
-} /* <--- MAKE SURE THIS BRACKET IS HERE */
-
-/* This draws the actual blue line */
-.column-title::after {
-    content: "";            
-    position: absolute;     
-    left: 0;                
-    bottom: 0;              
-    width: 50px;            
-    height: 3px;            
-    background: #0563af;    
+    line-height: 1.4;
 }
 
+.info-block h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
 
+.skill-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* --- 11. Main Content (Right Column) --- */
+.main-content {
+    flex: 2; /* Takes up 2/3 of the space */
+    background-color: #ffffff;
+    color: #333; /* Dark text for readability on white */
+    padding: 40px;
+}
+
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section h2 {
+    color: #222;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.job, .edu-item {
+    margin-bottom: 25px;
+}
+
+.job h3, .edu-item h3 {
+    font-size: 1.2rem;
+    color: var(--secondary-blue);
+    margin-bottom: 1px;
+}
+
+.company, .school {
+    display: block;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.main-content ul {
+    padding-left: 25px;
+    margin-bottom: 20px;
+}
+
+.main-content li {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.main-content hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
