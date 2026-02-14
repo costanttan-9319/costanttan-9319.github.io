@@ -35,7 +35,12 @@ body {
     position: relative;
 }
 /* --- 2. Navigation Bar --- */
-
+/* Hide all mobile-specific elements on Desktop */
+#menu-toggle, 
+.hamburger, 
+.nav-logo {
+    display: none;
+}
 
 .navbar {
     display: flex;
@@ -377,4 +382,122 @@ footer p {
     border: 0;
     border-top: 1px solid #eee;
     margin: 30px 0;
+}
+
+/* --- 12. Media Query for Mobile (iPhone 12 / 390px) --- */
+@media screen and (max-width: 768px) {
+    /* 1. Navbar & Toggle Elements */
+    .hamburger, .nav-logo {
+        display: block !important;
+    }
+
+    .navbar {
+        height: 60px !important;
+        justify-content: space-between !important;
+        padding: 0 20px !important;
+    }
+
+    .social-icons {
+        display: none !important;
+    }
+
+    /* 2. The Main Mobile Menu */
+    .nav-links {
+        display: none; 
+        position: fixed !important;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: auto !important; 
+        min-height: 50vh !important;
+        /* THE FIX: Set overflow to visible so dropdowns aren't clipped */
+        overflow: visible !important; 
+        background: rgba(12, 22, 33, 0.98);
+        flex-direction: column !important;
+        align-items: center;
+        padding: 30px 0;
+        z-index: 1000;
+        border-bottom: 2px solid var(--primary-blue);
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex !important;
+    }
+
+    /* 3. THE DROPDOWN FIX: Make it expand vertically */
+    .dropdown {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-content {
+        position: relative !important; /* Forces menu to grow downwards instead of floating */
+        width: 100% !important;
+        background: rgba(20, 30, 45, 0.95) !important;
+        box-shadow: none !important;
+        display: none;
+    }
+
+    /* Show dropdown content on click/hover for mobile */
+    .dropdown:hover .dropdown-content {
+        display: block !important;
+    }
+
+    /* 4. RESUME LAYOUT FIX (Sidebar & Experience) */
+    .resume-container {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks Personal Info on top */
+        margin: 80px 15px 30px 15px !important;
+        height: auto !important;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        flex: none !important;
+        padding: 40px 25px !important;
+        display: block !important;
+    }
+
+    .main-content {
+        width: 100% !important;
+        flex: none !important;
+        padding: 40px 25px !important;
+    }
+
+    .profile-img {
+        width: 160px !important;
+        height: 160px !important;
+        margin: 0 auto 15px !important;
+    }
+}
+
+.footer {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #0b0d0f; /* Matches your dark theme */
+    color: #ffffff;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Spaces the icons out nicely */
+    margin-bottom: 20px;
+}
+
+.footer-socials a {
+    color: #ffffff;
+    font-size: 1.8rem; /* Makes them easy to tap on a phone */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Adds a nice hover effect for desktop users */
+.footer-socials a:hover {
+    color: var(--primary-blue);
+    transform: translateY(-3px);
+}
+
+.footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
